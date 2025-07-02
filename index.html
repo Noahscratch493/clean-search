@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clean Search</title>
+  <!-- Tailwind CDN for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome CDN for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-white">
+
+  <!-- Header with Search -->
+  <div class="bg-gradient-to-r from-blue-50 to-indigo-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-inter">
+        Clean Search
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 font-inter">
+        Google search without AI spam and Wikipedia clutter
+      </p>
+
+      <!-- Search Bar -->
+      <div class="max-w-2xl mx-auto relative">
+        <div class="flex bg-white rounded-full shadow-lg border border-gray-200 overflow-hidden">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search for human-generated content..."
+            class="flex-1 px-6 py-4 text-lg outline-none font-inter"
+          />
+          <button
+            id="searchBtn"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 font-semibold transition-colors font-inter"
+          >
+            Search
+          </button>
+        </div>
+        <p class="text-sm text-gray-500 mt-3 font-inter">
+          Automatically adds "-ai -wikipedia" to your search
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <div class="max-w-6xl mx-auto px-4 py-16">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4 font-inter">
+        Why Use Clean Search?
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto font-inter">
+        Get better Google results by filtering out AI-generated content and
+        Wikipedia entries that often dominate search results.
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <div class="text-center p-6 bg-green-50 rounded-lg">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-ban text-green-600 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 font-inter">
+          No AI Spam
+        </h3>
+        <p class="text-gray-600 font-inter">
+          Filters out AI-generated articles and content that flood modern
+          search results
+        </p>
+      </div>
+
+      <div class="text-center p-6 bg-blue-50 rounded-lg">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-users text-blue-600 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 font-inter">
+          Human Content Only
+        </h3>
+        <p class="text-gray-600 font-inter">
+          Find authentic, human-written articles, blogs, and discussions
+        </p>
+      </div>
+
+      <div class="text-center p-6 bg-purple-50 rounded-lg">
+        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <i class="fas fa-magic text-purple-600 text-2xl"></i>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-3 font-inter">
+          Cleaner Results
+        </h3>
+        <p class="text-gray-600 font-inter">
+          Better than udm=14 - removes Wikipedia clutter while keeping
+          quality sources
+        </p>
+      </div>
+    </div>
+
+    <!-- Benefits Section -->
+    <div class="bg-gray-50 rounded-xl p-8 mb-16">
+      <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center font-inter">
+        What "-ai -wikipedia" Does
+      </h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-3 font-inter">
+            Removes:
+          </h4>
+          <ul class="space-y-2 text-gray-600 font-inter">
+            <li class="flex items-center">
+              <i class="fas fa-times text-red-500 mr-3"></i>
+              AI-generated blog posts and articles
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-times text-red-500 mr-3"></i>
+              Wikipedia entries (often too basic)
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-times text-red-500 mr-3"></i>
+              Auto-generated content farms
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-times text-red-500 mr-3"></i>
+              Low-quality AI summaries
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-3 font-inter">
+            Keeps:
+          </h4>
+          <ul class="space-y-2 text-gray-600 font-inter">
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Expert-written articles
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Forum discussions and Q&A
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Personal blogs and experiences
+            </li>
+            <li class="flex items-center">
+              <i class="fas fa-check text-green-500 mr-3"></i>
+              Original research and reports
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- How to Use Manually -->
+    <div class="text-center bg-blue-50 rounded-xl p-8">
+      <h3 class="text-2xl font-bold text-gray-900 mb-4 font-inter">
+        Use This Trick Anywhere
+      </h3>
+      <p class="text-gray-600 mb-4 font-inter">
+        Add this to any Google search to get cleaner results:
+      </p>
+      <div class="bg-white rounded-lg p-4 border border-gray-200 max-w-md mx-auto">
+        <code class="text-blue-600 font-mono text-lg">
+          -ai -wikipedia
+        </code>
+      </div>
+      <p class="text-sm text-gray-500 mt-3 font-inter">
+        Just add this to the end of your search query
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8 px-4">
+    <div class="max-w-4xl mx-auto text-center space-y-2">
+      <p class="text-gray-400 font-inter">
+        Clean Search - Making Google results human again
+      </p>
+      <p class="text-gray-500 text-sm font-inter italic">
+        This site is not affiliated with or endorsed by Google.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+
+    function handleSearch() {
+      const query = searchInput.value.trim();
+      if (query) {
+        const cleanQuery = query + ' -ai -wikipedia';
+        const googleUrl = 'https://www.google.com/search?q=' + encodeURIComponent(cleanQuery);
+        window.open(googleUrl, '_blank');
+      }
+    }
+
+    searchBtn.addEventListener('click', handleSearch);
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        handleSearch();
+      }
+    });
+  </script>
+</body>
+</html>
