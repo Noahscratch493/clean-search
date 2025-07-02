@@ -213,5 +213,25 @@
       }
     });
   </script>
+  <script>
+  (function () {
+    var isOldBrowser = false;
+    try {
+      if (
+        !window.fetch ||
+        !window.Promise ||
+        !window.addEventListener ||
+        !Array.from
+      ) {
+        isOldBrowser = true;
+      }
+    } catch (e) {
+      isOldBrowser = true;
+    }
+    if (isOldBrowser) {
+      window.location.href = "/clean-search/lite/";
+    }
+  })();
+</script>
 </body>
 </html>
