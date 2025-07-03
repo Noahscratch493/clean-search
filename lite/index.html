@@ -70,6 +70,17 @@
     .modern-browser a:hover {
       color: #0078d7;
     }
+    #updateNotice {
+      margin-top: 2rem;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      color: #444;
+    }
+    #updateNotice a {
+      color: #1a73e8;
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -84,17 +95,19 @@
       <button onclick="doSearch()"><i class="fas fa-search"></i></button>
     </div>
     <p class="note">Works in Internet Explorer and older browsers too.</p>
+
     <div id="modernNotice" class="modern-browser" style="display: none;">
       <a href="/clean-search">You’re using a modern browser. Try the full version instead.</a>
     </div>
- <div style="margin-top: 2rem; text-align: center; font-family: Arial, sans-serif; font-size: 14px; color: #444;">
-  <p>
-    Using an outdated browser can affect your experience. For best results, consider updating your browser.  
-    <a href="https://www.whatismybrowser.com/guides/how-to-update-your-browser/" target="_blank" rel="noopener noreferrer" style="color: #1a73e8; text-decoration: underline;">
-      How to update your browser
-    </a>
-  </p>
-</div>
+
+    <div id="updateNotice">
+      <p>
+        Using an outdated browser can affect your experience. For best results, consider updating your browser.  
+        <a href="https://www.whatismybrowser.com/guides/how-to-update-your-browser/" target="_blank" rel="noopener noreferrer">
+          How to update your browser
+        </a>
+      </p>
+    </div>
 
   </div>
 
@@ -114,7 +127,6 @@
       }
     });
 
-    // Detect modern browser
     (function () {
       var isModern = false;
       try {
@@ -128,6 +140,10 @@
       }
       if (isModern) {
         document.getElementById("modernNotice").style.display = "block";
+        document.getElementById("updateNotice").style.display = "none";
+      } else {
+        document.getElementById("modernNotice").style.display = "none";
+        document.getElementById("updateNotice").style.display = "block";
       }
     })();
   </script>
